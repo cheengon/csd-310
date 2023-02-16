@@ -11,4 +11,8 @@ client = MongoClient(url)
 db = client.pytech
 
 # Print the names of all the collections in the "pytech" database
+print("\n -- Pytech COllection List --")
 print(db.list_collection_names())
+
+# Print an exit message
+input("\n\n  End of program, press any key to exit... ")
