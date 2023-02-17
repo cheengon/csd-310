@@ -1,5 +1,5 @@
-import mysql.connector
-from mysql.connector import errorcode
+import mysql.connector  # import the MySQL Connector Python module
+from mysql.connector import errorcode  # import the error codes for handling MySQL errors
 
 # Define the database configuration object
 config = {
