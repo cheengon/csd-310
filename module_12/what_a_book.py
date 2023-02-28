@@ -43,6 +43,7 @@ def show_books(cursor):
     for book in books:
         table.add_row([book[0], book[1], book[2], book[3]])
     print(table)
+    input("Press Enter to return to main menu.")
 
 def show_locations(cursor):
     # Query to retrive all store locations from the database
@@ -56,8 +57,9 @@ def show_locations(cursor):
             table.add_row([location[0], location[1]])
         print("Store Locations:")
         print(table)
+        input("Press Enter to return to main menu.")
     else:
-        print("No store locations found.")
+        input("No store locations found. Press Enter to return to main menu.")
 
 def validate_user(cursor):
     """
@@ -70,7 +72,7 @@ def validate_user(cursor):
     if user:
         return user_id
     else:
-        print('Please enter a valid user ID.')
+        input('Please provide a valid user ID. Press Enter to try again.')
         return False
 
 def show_account_menu():
@@ -135,7 +137,7 @@ def add_book_to_wishlist(cursor, user_id, book_id):
         # commit changes to the database
         db.commit()
 
-        print("Book added to wishlist!")
+        input("Book added to wishlist! Press Enter to return to your account menu.")
 
     except mysql.connector.Error as err:
         # if there's an error, rollback changes and print error message
@@ -200,7 +202,7 @@ try:
 
                 # invalid input
                 else:
-                    print("Invalid input. Please enter a number between 1 and 3.")
+                    input("Invalid input. Press Enter and select a number between 1 and 3.")
 
                 # show account menu to user again
                 show_account_menu()
@@ -210,7 +212,7 @@ try:
 
         # invalid input
         else:
-            print("Invalid input. Please enter a number between 1 and 4.")
+            input("Invalid input. Press Enter and select a number between 1 and 4.")
 
         # show main menu to user again
         show_menu()
