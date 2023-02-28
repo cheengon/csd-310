@@ -43,7 +43,7 @@ def show_books(cursor):
     for book in books:
         table.add_row([book[0], book[1], book[2], book[3]])
     print(table)
-    input("Press Enter to return to main menu.")
+    input("Press Enter to return to Main Menu.")
 
 def show_locations(cursor):
     # Query to retrive all store locations from the database
@@ -57,9 +57,9 @@ def show_locations(cursor):
             table.add_row([location[0], location[1]])
         print("Store Locations:")
         print(table)
-        input("Press Enter to return to main menu.")
+        input("Press Enter to return to Main Menu.")
     else:
-        input("No store locations found. Press Enter to return to main menu.")
+        input("No store locations found. Press Enter to return to Main Menu.")
 
 def validate_user(cursor):
     """
@@ -98,10 +98,12 @@ def show_wishlist(cursor, user_id):
         table.field_names = ["ID", "Book Name", "Author", "Details"]
         for book in books:
             table.add_row([book[0], book[1], book[2], book[3]])
-        print('Your Wishlist:')
+        print("Your Wishlist:")
         print(table)
+        input("Press Enter to return to Account Menu.")
     else:
-        print('Your Wishlist is empty')
+        input("Your Wishlist is empty. Press Enter to return to Account Menu.")
+
 
 def show_books_to_add(cursor, user_id):
     # Query for books that are not already in the user's wishlist
@@ -137,7 +139,7 @@ def add_book_to_wishlist(cursor, user_id, book_id):
         # commit changes to the database
         db.commit()
 
-        input("Book added to wishlist! Press Enter to return to your account menu.")
+        input("Book added to wishlist! Press Enter to return to your Account Menu.")
 
     except mysql.connector.Error as err:
         # if there's an error, rollback changes and print error message
