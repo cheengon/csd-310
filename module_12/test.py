@@ -5,7 +5,9 @@
 #    description: Application that interacts with a MySQL database 
 
 # Modules required for this program
-import mysql.connector, prettytable, sys
+import mysql.connector 
+import prettytable
+import sys
 from mysql.connector import Error
 from prettytable import PrettyTable
 
@@ -29,6 +31,8 @@ def show_menu():
     print('3. My Account')
     print('4. Exit')
     print('-------------------')
+
+#show_menu()
 
 def show_books(cursor):
     # Query for all books from the database
